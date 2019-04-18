@@ -22,11 +22,14 @@ import tensorflow as tf
 
 tf.logging.set_verbosity(v = tf.logging.INFO)
 
-LIST_OF_LABELS = "daisy,dandelion,roses,sunflowers,tulips".split(',')
+                                   #"daisy,dandelion,roses,sunflowers,tulips".split(',')
+#LIST_OF_LABELS = "Exposed walls and other structures made of concrete, wood, or metal;Scarps and steep slopes in clay;Wave-cut clay platforms;Fine-grained sand beaches;Scarps and steep slopes in sand;Coarse-grained sand beaches;Mixed sand and gravel (shell) beaches;Gravel (shell) beaches;Exposed riprap structures;Exposed tidal flats;Sheltered solid man-made structures; such as bulkheads and docks;Sheltered riprap structures;Sheltered scarps;Sheltered tidal flats;Salt- and brackish-water marshes;Fresh-water marshes (herbaceous vegetation);Fresh-water swamps (woody vegetation)".split(';')
+
+
 HEIGHT = 299
 WIDTH = 299
 NUM_CHANNELS = 3
-NCLASSES = 5
+NCLASSES = 16
 
 def linear_model(img, mode, hparams):
     X = tf.reshape(tensor = img, shape = [-1,HEIGHT * WIDTH]) #flatten
